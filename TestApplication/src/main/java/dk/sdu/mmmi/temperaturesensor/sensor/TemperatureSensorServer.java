@@ -1,27 +1,28 @@
-package dk.sdu.mmmi.co2sensor.sensor;
+package dk.sdu.mmmi.temperaturesensor.sensor;
+
+import dk.sdu.mmmi.SensorData;
 
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class SensorServer {
-    static CO2Sensor sensor = null;
+public class TemperatureSensorServer {
+    static TemperatureSensor sensor = null;
     static Socket socket = null;
     static ServerSocket server = null;
     static ObjectOutputStream stream = null;
 
     public static void main(String[] args) {
-        sensor = new CO2Sensor("CO2-1");
+        sensor = new TemperatureSensor("Temperature-1");
 
         try {
-            server = new ServerSocket(4445);
+            server = new ServerSocket(4446);
             while (true) {
                 socket = server.accept();
                 stream = new ObjectOutputStream(socket.getOutputStream());
 
-                SensorData s = new SensorData(1.0, "lol");
+                SensorData s = new SensorData(sensor.getValue(), sensor.getName());
 
                 stream.writeObject(s);
 

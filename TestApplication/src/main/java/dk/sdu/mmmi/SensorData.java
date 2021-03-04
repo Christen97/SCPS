@@ -1,4 +1,6 @@
-package dk.sdu.mmmi.co2sensor.sensor;
+package dk.sdu.mmmi;
+
+import dk.sdu.mmmi.co2sensor.sensor.ISensor;
 
 import java.io.Serializable;
 
