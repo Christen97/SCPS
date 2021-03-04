@@ -1,4 +1,4 @@
-package dk.sdu.mmmi.testapplication.Domain;
+package dk.sdu.mmmi.co2sensor.sensor;
 
 public class CO2Sensor implements ISensor {
 

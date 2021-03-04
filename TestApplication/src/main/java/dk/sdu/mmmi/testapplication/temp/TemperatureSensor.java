@@ -1,4 +1,6 @@
-package dk.sdu.mmmi.testapplication.Domain;
+package dk.sdu.mmmi.testapplication.temp;
+
+import dk.sdu.mmmi.co2sensor.sensor.ISensor;
 
 public class TemperatureSensor implements ISensor {
 
